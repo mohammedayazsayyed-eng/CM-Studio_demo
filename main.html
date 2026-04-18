@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CM Studio - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* HERO SECTION */
+    .hero {
+      background-color: #eaf4fb;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: #1a3c6e;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.7;
+    }
+
+    .hero .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* STATS ROW */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      background-color: #1a3c6e;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .stat-box h2 {
+      font-size: 36px;
+      color: #00cfbe;
+    }
+
+    .stat-box p {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* WHAT WE OFFER */
+    .cards-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #f5f9ff;
+      border: 1px solid #dce8f5;
+      border-radius: 8px;
+      padding: 25px;
+      width: 230px;
+      text-align: center;
+    }
+
+    .card .icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      color: #1a3c6e;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* TESTIMONIALS */
+    .testimonials-bg {
+      background-color: #f0f7ff;
+      padding: 60px 40px;
+    }
+
+    .testimonials-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonials-inner .section-title {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .testimonials-inner .section-subtitle {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .testimonial-cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      border: 1px solid #dce8f5;
+      border-radius: 8px;
+      padding: 25px;
+      width: 300px;
+    }
+
+    .testimonial-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-card .author {
+      font-size: 13px;
+      font-weight: bold;
+      color: #1a3c6e;
+    }
+
+    .testimonial-card .role {
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* CTA STRIP */
+    .cta-strip {
+      background-color: #00cfbe;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .cta-strip h2 {
+      font-size: 28px;
+      color: #1a3c6e;
+      margin-bottom: 10px;
+    }
+
+    .cta-strip p {
+      color: #1a3c6e;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="logo" href="main.html">CM Studio</a>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="lms-btn" href="lms-login.html">Login</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Unleash a New Learning Paradigm</h1>
+    <p>
+      We help schools and colleges across India transform their classrooms
+      with innovative technology — making learning more engaging,
+      interactive, and effective.
+    </p>
+    <div class="buttons">
+      <a href="programs.html" class="btn-primary">Explore Programs</a>
+      <a href="contact.html" class="btn-outline">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat-box">
+      <h2>50+</h2>
+      <p>Schools Empowered</p>
+    </div>
+    <div class="stat-box">
+      <h2>25,000+</h2>
+      <p>Students Impacted</p>
+    </div>
+    <div class="stat-box">
+      <h2>7+</h2>
+      <p>Years of Innovation</p>
+    </div>
+    <div class="stat-box">
+      <h2>8+</h2>
+      <p>Industry Partners</p>
+    </div>
+  </div>
+
+  <!-- WHAT WE OFFER -->
+  <div class="section">
+    <h2 class="section-title" style="text-align:center;">What We Offer</h2>
+    <p class="section-subtitle" style="text-align:center;">
+      Our programs are designed to modernize education from the ground up.
+    </p>
+    <div class="cards-row">
+      <div class="card">
+        <div class="icon">🖥️</div>
+        <h3>Smart Classrooms</h3>
+        <p>Interactive boards and digital resources for immersive learning.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>E-Library Labs</h3>
+        <p>Thousands of digital books and research resources in one place.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌐</div>
+        <h3>3D Interactive</h3>
+        <p>Bring lessons to life with 3D models and spatial learning tools.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤖</div>
+        <h3>AI Innovation Labs</h3>
+        <p>AI, robotics, and machine learning tools for future-ready students.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 35px;">
+      <a href="programs.html" class="btn-primary">See All Programs</a>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials-bg">
+    <div class="testimonials-inner">
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-subtitle">Real words from educators, parents, and students.</p>
+      <div class="testimonial-cards">
+        <div class="testimonial-card">
+          <p>"Working with Create Mind Studio has been a game-changer for our school. Their setup was hassle-free and their support is excellent."</p>
+          <div class="author">Sr. Judy Levies</div>
+          <div class="role">Principal</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Their programs have revitalized my teaching approach. Students are more engaged and enthusiastic than ever before."</p>
+          <div class="author">Angelina Gonzal</div>
+          <div class="role">Teacher</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"My child comes home excited about what they learned. Create Mind Studio has made education truly fun and meaningful."</p>
+          <div class="author">Neha Sharma</div>
+          <div class="role">Parent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <h2>Ready to Transform Your Institution?</h2>
+    <p>Join 50+ schools across India already using Create Mind Studio.</p>
+    <a href="contact.html" class="btn-primary">Contact Us Today</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Create Mind Studio LLP. All Rights Reserved.</p>
+    <p>
+      62A Maker Tower F, Cuffe Parade, Mumbai — 400005 &nbsp;|&nbsp;
+      +91 81697 15102 &nbsp;|&nbsp;
+      <a href="mailto:sales@thecminds.com">sales@thecminds.com</a>
+    </p>
+    <p style="margin-top:12px;">
+      <a href="main.html">Home</a> &nbsp;|&nbsp;
+      <a href="programs.html">Programs</a> &nbsp;|&nbsp;
+      <a href="about.html">About</a> &nbsp;|&nbsp;
+      <a href="contact.html">Contact</a> &nbsp;|&nbsp;
+      <a href="lms-login.html">LMS Login</a>
+    </p>
+  </footer>
+
+</body>
+</html>

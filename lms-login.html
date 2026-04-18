@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS Login - Create Mind Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+    /* PAGE BACKGROUND */
+    body {
+      background-color: #eaf4fb;
+    }
+
+    /* CENTER THE LOGIN BOX */
+    .lms-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* LOGIN BOX */
+    .login-box {
+      background-color: #fff;
+      border: 1px solid #dce8f5;
+      border-radius: 10px;
+      padding: 40px;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    .login-box .logo-area {
+      margin-bottom: 25px;
+    }
+
+    .login-box .logo-area h2 {
+      font-size: 22px;
+      color: #1a3c6e;
+    }
+
+    .login-box .logo-area p {
+      font-size: 14px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* TABS */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #dce8f5;
+      margin-bottom: 25px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: #888;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    .tabs button.active {
+      color: #1a3c6e;
+      font-weight: bold;
+      border-bottom-color: #1a3c6e;
+    }
+
+    /* ROLE SELECTOR */
+    .role-selector {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .role-btn {
+      padding: 7px 18px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: none;
+      font-size: 13px;
+      cursor: pointer;
+      color: #555;
+      font-family: Arial, sans-serif;
+    }
+
+    .role-btn.active {
+      background-color: #1a3c6e;
+      color: #fff;
+      border-color: #1a3c6e;
+    }
+
+    /* FORM FIELDS */
+    .lms-form .form-group {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .lms-form label {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .lms-form input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none;
+      font-family: Arial, sans-serif;
+    }
+
+    .lms-form input:focus {
+      border-color: #1a3c6e;
+    }
+
+    /* FORGOT PASSWORD LINK */
+    .forgot-link {
+      display: block;
+      text-align: right;
+      font-size: 12px;
+      color: #1a3c6e;
+      text-decoration: none;
+      margin-top: -8px;
+      margin-bottom: 18px;
+    }
+
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+
+    /* SUBMIT BUTTON */
+    .lms-submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #1a3c6e;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 15px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+    }
+
+    .lms-submit-btn:hover {
+      background-color: #14305a;
+    }
+
+    /* DIVIDER */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .divider hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid #dce8f5;
+    }
+
+    .divider span {
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* GOOGLE BUTTON */
+    .google-btn {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    .google-btn:hover {
+      background-color: #f5f5f5;
+    }
+
+    /* PANEL SWITCHING */
+    #registerPanel {
+      display: none;
+    }
+
+    /* SUCCESS MESSAGE */
+    #loginSuccess, #registerSuccess {
+      display: none;
+      background-color: #d4f5ed;
+      border: 1px solid #00cfbe;
+      color: #0a6e5e;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+
+    /* BACK TO WEBSITE LINK */
+    .back-link {
+      display: block;
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: #1a3c6e;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a class="logo" href="main.html">Create Mind Studio</a>
+    <ul>
+      <li><a href="main.html">Home</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="lms-btn" href="lms-login.html">Login</a>
+  </nav>
+
+  <!-- LOGIN PAGE -->
+  <div class="lms-page">
+    <div class="login-box">
+
+      <!-- Logo / Title -->
+      <div class="logo-area">
+        <h2>🎓 LMS Portal</h2>
+        <p>Create Mind Studio — Learning Management System</p>
+      </div>
+
+      <!-- Tabs: Login / Register -->
+      <div class="tabs">
+        <button class="active" id="loginTabBtn" onclick="showTab('login')">Sign In</button>
+        <button id="registerTabBtn" onclick="showTab('register')">Register</button>
+      </div>
+
+      <!-- LOGIN PANEL -->
+      <div id="loginPanel">
+
+        <!-- Role Selector -->
+        <div style="text-align:left; font-size:13px; color:#555; margin-bottom:8px; font-weight:bold;">
+          I am a:
+        </div>
+        <div class="role-selector">
+          <button class="role-btn active" onclick="selectRole(this)">Student</button>
+          <button class="role-btn" onclick="selectRole(this)">Teacher</button>
+          <button class="role-btn" onclick="selectRole(this)">Admin</button>
+        </div>
+
+        <!-- Login Form -->
+        <div class="lms-form">
+          <div class="form-group">
+            <label for="loginEmail">Email / Student ID</label>
+            <input type="email" id="loginEmail" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+          </div>
+          <a href="#" class="forgot-link" onclick="alert('A reset link will be sent to your email.')">
+            Forgot Password?
+          </a>
+          <button class="lms-submit-btn" onclick="doLogin()">Sign In</button>
+
+          <div class="divider">
+            <hr><span>OR</span><hr>
+          </div>
+
+          <button class="google-btn" onclick="alert('Google login coming soon!')">
+            🔵 Continue with Google
+          </button>
+
+          <div id="loginSuccess">
+            ✅ Login successful! Redirecting to your dashboard...
+          </div>
+        </div>
+
+      </div>
+
+      <!-- REGISTER PANEL -->
+      <div id="registerPanel">
+        <div class="lms-form">
+          <div class="form-group">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" placeholder="Your Full Name">
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="regSchool">School / Institution Name</label>
+            <input type="text" id="regSchool" placeholder="e.g. St. Xavier's School">
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Create Password</label>
+            <input type="password" id="regPassword" placeholder="Minimum 8 characters">
+          </div>
+          <button class="lms-submit-btn" onclick="doRegister()">Create Account</button>
+
+          <div id="registerSuccess">
+            ✅ Account created! Please check your email to verify your account.
+          </div>
+        </div>
+      </div>
+
+      <!-- Back to site -->
+      <a href="main.html" class="back-link">← Back to Website</a>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Create Mind Studio LLP. All Rights Reserved.</p>
+    <p>
+      <a href="mailto:sales@thecminds.com">sales@thecminds.com</a>
+      &nbsp;|&nbsp; +91 81697 15102
+    </p>
+  </footer>
+
+  <script>
+
+    // Switch between Login and Register tabs
+    function showTab(tab) {
+      var loginPanel    = document.getElementById("loginPanel");
+      var registerPanel = document.getElementById("registerPanel");
+      var loginTabBtn   = document.getElementById("loginTabBtn");
+      var registerTabBtn = document.getElementById("registerTabBtn");
+
+      if (tab === "login") {
+        loginPanel.style.display    = "block";
+        registerPanel.style.display = "none";
+        loginTabBtn.classList.add("active");
+        registerTabBtn.classList.remove("active");
+      } else {
+        loginPanel.style.display    = "none";
+        registerPanel.style.display = "block";
+        registerTabBtn.classList.add("active");
+        loginTabBtn.classList.remove("active");
+      }
+    }
+
+    // Select Student / Teacher / Admin role
+    function selectRole(btn) {
+      // Remove active from all role buttons
+      var allRoleBtns = document.querySelectorAll(".role-btn");
+      allRoleBtns.forEach(function(b) {
+        b.classList.remove("active");
+      });
+      // Add active to clicked button
+      btn.classList.add("active");
+    }
+
+    // Handle Login
+    function doLogin() {
+      var email    = document.getElementById("loginEmail").value.trim();
+      var password = document.getElementById("loginPassword").value.trim();
+
+      if (email === "" || password === "") {
+        alert("Please enter your email and password.");
+        return;
+      }
+
+      // Show success message
+      document.getElementById("loginSuccess").style.display = "block";
+    }
+
+    // Handle Register
+    function doRegister() {
+      var name     = document.getElementById("regName").value.trim();
+      var email    = document.getElementById("regEmail").value.trim();
+      var school   = document.getElementById("regSchool").value.trim();
+      var password = document.getElementById("regPassword").value.trim();
+
+      if (name === "" || email === "" || password === "") {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      if (password.length < 8) {
+        alert("Password must be at least 8 characters.");
+        return;
+      }
+
+      // Show success message
+      document.getElementById("registerSuccess").style.display = "block";
+    }
+
+  </script>
+
+</body>
+</html>
